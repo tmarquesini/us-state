@@ -1,6 +1,6 @@
 # State
 
-Validate US States, Canada Provinces, and Mexico States
+Validate US, Mexico and Brazil States and Canada Provinces
 
 <p >
   <a href="https://travis-ci.org/laravel-validation-rules/us-state">
@@ -39,15 +39,18 @@ $request->validate(['test' => 'SON'], ['test' => new Abbr); // Pass!
 $request->validate(['test' => 'Utah'], ['test' => new Full]); // Pass!
 $request->validate(['test' => 'Alberta'], ['test' => new Full]); // Pass!
 $request->validate(['test' => 'Sonora'], ['test' => new Full]); // Pass!
+$request->validate(['test' => 'São Paulo'], ['test' => new Full]); // Pass!
 
 # Abbreviation - USA vs Canada vs Mexico
 $request->validate(['test' => 'UT'], ['test' => new Abbr]); // Pass!
 $request->validate(['test' => 'UT'], ['test' => new Abbr('US')]); // Pass!
 $request->validate(['test' => 'BC'], ['test' => new Abbr('CA')); // Pass!
 $request->validate(['test' => 'SON'], ['test' => new Abbr('MX')); // Pass!
+$request->validate(['test' => 'RJ'], ['test' => new Abbr('BR')); // Pass!
 
 # Full - USA vs Canada vs Mexico
 $request->validate(['test' => 'Utah'], ['test' => new Full('US')]); // Pass!
 $request->validate(['test' => 'Alberta'], ['test' => new Full('CA')]); // Pass!
 $request->validate(['test' => 'Sonora'], ['text' => new Full('MX')]); // Pass!
+$request->validate(['test' => 'Rio de Janeiro'], ['text' => new Full('BR')]); // Pass!
 ```
